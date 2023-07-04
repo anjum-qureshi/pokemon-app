@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Pokeinfo from "./PokeInfo";
+import React, { useEffect, useState } from 'react';
 
 const PokemonThumb = ({ image, name, type, showDetails }) => {
   return (
@@ -12,16 +11,17 @@ const PokemonThumb = ({ image, name, type, showDetails }) => {
   );
 };
 
-const url = "https://pokeapi.co/api/v2/pokemon";
+const url = 'https://pokeapi.co/api/v2/pokemon';
 
 const App = () => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [visible, setVisible] = useState(false);
-  const [loadMore, setLoadMore] = useState(`${url}?limit=20`);
+  const [loadMore, setLoadMore] = useState(`${url}?limit=2`);
   const [currIndex, setCurrIndex] = useState(null);
 
   const getAllPokemons = async () => {
-    const response = await (await fetch(loadMore)).json();
+    const resData = await fetch(loadMore);
+    const response = await resData.json();
     setLoadMore(response.next);
 
     const pokemons = await Promise.all(
@@ -37,6 +37,8 @@ const App = () => {
   useEffect(() => {
     getAllPokemons();
   }, []);
+
+  const currentPokemon = allPokemons[currIndex];
 
   return (
     <div className="app-contaner">
@@ -63,11 +65,34 @@ const App = () => {
           Load more
         </button>
       </div>
-      <Pokeinfo
-        visible={visible}
-        data={allPokemons[currIndex]}
-        hideDetails={() => setVisible(false)}
-      />
+      {visible && (
+        <div className={`popup ${visible ? 'show' : 'hide'}`}>
+          <h2>{currentPokemon.name}</h2>
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${currentPokemon.id}.svg`}
+            alt=""
+          />
+          <div className="abilities">
+            {currentPokemon.abilities.map((poke, idx) => (
+              <div className="group" key={`group-poke-${idx}`}>
+                <h2>{poke.ability.name}</h2>
+              </div>
+            ))}
+          </div>
+          <div className="base-stat">
+            {currentPokemon.stats.map((poke) => {
+              return (
+                <h3>
+                  {poke.stat.name}:{poke.base_stat}
+                </h3>
+              );
+            })}
+          </div>
+          <button className="load-more" onClick={() => setVisible(false)}>
+            close
+          </button>
+        </div>
+      )}
     </div>
   );
 };

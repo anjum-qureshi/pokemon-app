@@ -1,0 +1,4 @@
+Unit test should be isolated
+can be run without any dependency
+should test one single thing
+readable so we can maintain them
