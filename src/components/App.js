@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const PokemonThumb = ({ image, name, type, showDetails }) => {
   return (
-    <div className={`${type} thumb-container`} onClick={showDetails}>
+    <div className={`${type} thumb-container`} onClick={showDetails} data-testid="pokemon-tile">
       <img src={image} alt={name} />
       <div className="detail-wrapper">
         <h3>{name}</h3>
@@ -47,22 +47,36 @@ const App = () => {
         <div className="all-container">
           {allPokemons.map((p, index) => {
             return (
-              <PokemonThumb
-                key={index}
-                image={p.sprites.other.dream_world.front_default}
-                name={p.name}
-                type={p.types[0].type.name}
-                showDetails={() => {
+              <div
+                key={`pokemon-${index}`}
+                className={`${p.types[0].type.name} thumb-container`}
+                onClick={() => {
                   setCurrIndex(index);
                   setVisible(true);
                 }}
-                hideDetails={() => setVisible(false)}
-              />
+                data-testid="pokemon-tile"
+              >
+                <img src={p.sprites.other.dream_world.front_default} alt={p.name} />
+                <div className="detail-wrapper">
+                  <h3>{p.name}</h3>
+                </div>
+              </div>
+              // <PokemonThumb
+              //   key={index}
+              //   image={p.sprites.other.dream_world.front_default}
+              //   name={p.name}
+              //   type={p.types[0].type.name}
+              // showDetails={() => {
+              //   setCurrIndex(index);
+              //   setVisible(true);
+              // }}
+              //   hideDetails={() => setVisible(false)}
+              // />
             );
           })}
         </div>
         <button className="load-more" onClick={() => getAllPokemons()}>
-          Load more
+          Load More
         </button>
       </div>
       {visible && (

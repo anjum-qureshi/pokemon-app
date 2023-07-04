@@ -5427,7 +5427,7 @@ export const pokemonData = {
 
 export const allPokemonsResponse = {
   count: 1281,
-  next: 'https://pokeapi.co/api/v2/pokemon?offset=1&limit=1',
+  next: 'https://pokeapi.co/api/v2/pokemon?offset=1&limit=2',
   previous: null,
   results: [{ name: 'bulbasaur', url: 'https://pokeapi.co/api/v2/pokemon/1/' }],
 };
