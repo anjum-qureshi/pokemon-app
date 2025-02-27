@@ -1,29 +1,28 @@
 plugins:
-- name: ai-proxy
- service: aummy_service
- config:
-   route_type: llm/v1/chat
-   auth:
-     header_name: Authorization
-     header_value: Bearer token
-   model:
-     provider: openai
-     name: gpt-4
-     options:
-       max_tokens: 512
-       temperature: 1.0
-- name: ai-prompt-decorator
- service: dummy_service
- config:
-   prompts:
-     prepend:
-     - role: system
-       content: You are data scientist, specialising in survey analytics.
-     - role: user
-       content: Classify this test result set as positive, negative, or neutral.
-     - role: assistant
-       content: These tests are NEUTRAL.
-     append:
-     - role: user
-       content: Do not mention any real participants name in your justification.
-
+  - name: ai-proxy
+    service: aummy_service
+    config:
+      route_type: llm/v1/chat
+      auth:
+        header_name: Authorization
+        header_value: Bearer token
+      model:
+        provider: openai
+        name: gpt-4
+        options:
+          max_tokens: 512
+          temperature: 1
+  - name: ai-prompt-decorator
+    service: dummy_service
+    config:
+      prompts:
+        prepend:
+          - role: system
+            content: 'You are data scientist, specialising in survey analytics.'
+          - role: user
+            content: 'Classify this test result set as positive, negative, or neutral.'
+          - role: assistant
+            content: These tests are NEUTRAL.
+        append:
+          - role: user
+            content: Do not mention any real participants name in your justification.
