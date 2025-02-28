@@ -1,6 +1,5 @@
 plugins:
 - name: ai-proxy
-  service: aummy_service
   enabled: true
   config:
    route_type: llm/v1/chat
@@ -14,7 +13,7 @@ plugins:
        max_tokens: 512
        temperature: 1.0
 - name: ai-prompt-decorator
-  service: dummy_service
+  enabled: true
   config:
    prompts:
      prepend:
