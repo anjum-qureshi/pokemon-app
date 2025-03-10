@@ -7,7 +7,7 @@ servers:
   - url: https://api.ingka.cte.ikeadt.com/apim/test
     description: APIM Test GCF endpoint sales order attachment bug
 paths:
-  /apim/mock/onprem/hello:
+  /apim/test/hello:
     get:
       summary: Returns a greeting message
       responses:
