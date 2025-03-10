@@ -4,7 +4,7 @@ info:
   description: APIM Mock API for testing BDS
   version: 1.0.0
 servers:
-  - url: https://api.ingka.cte.ikeadt.com/apim/test
+  - url: https://api.ingka.cte.ikeadt.com/apim/hello
     description: APIM Test GCF endpoint sales order attachment bug
 paths:
   /apim/test/hello:
