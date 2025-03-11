@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: APIM Test GCF API
-  description: APIM Mock API for testing BDS
+  description: APIM TEST API for testing gcf
   version: 1.0.0
 servers:
   - url: https://api.ingka.cte.ikeadt.com/apim/apim-path-prefix-plugin-test
@@ -21,3 +21,9 @@ paths:
                   message:
                     type: string
                     example: Hello, OpenShift XX !!
+securitySchemes:
+    bearer_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Bearer token/access token from Ingka Enterprise IAM
