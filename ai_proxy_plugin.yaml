@@ -1,7 +1,7 @@
 plugins:
 - name: ai-proxy
   enabled: true
-  route: llm/v1/chat
+  route: chat/completions
   config:
    route_type: llm/v1/chat
    auth:
