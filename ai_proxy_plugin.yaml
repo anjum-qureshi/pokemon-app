@@ -5,7 +5,7 @@ plugins:
    route_type: llm/v1/chat
    auth:
      header_name: Authorization
-     header_value: Bearer token
+     header_value: '{vault://test-apim-vault/test-anjum/authTokenKey}'
    model:
      provider: openai
      name: gpt-4
