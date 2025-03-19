@@ -1,8 +1,8 @@
 plugins:
 - name: ai-proxy
   enabled: true
+  route: llm/v1/chat
   config:
-   route: llm/v1/chat
    route_type: llm/v1/chat
    auth:
      header_name: Authorization
