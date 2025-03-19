@@ -1,0 +1,40 @@
+openapi: 3.0.0
+servers:
+  - url: https://api.ingka.ikea.com/apim/openai
+    description: Azure OpenAI Service API PROD
+info:
+  title: Test APIM Azure OpenAI Service API
+  description: Azure OpenAI APIs for completions and search
+  version: 1.0.0
+  contact:
+    name: mlops team
+    email: mlops@ingka.ikea.com
+    url: https://allen.ingka.com/catalog/default/api/test-azure-openai-service-api-plugins
+
+paths:
+  /chat/completions$:
+    post:
+      summary: get chat completions.
+      description: Get Chat completions
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createCompletionResponse"
+      security:
+        - bearer_auth: []
+components:
+  schemas:
+    createCompletionResponse:
+      type: object
+      properties:
+        model:
+          type: string
+        object:
+          type: string
+        id:
+          type: string
+        created:
+          type: integer
