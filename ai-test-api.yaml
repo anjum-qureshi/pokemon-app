@@ -3,7 +3,7 @@ servers:
   - url: https://api.ingka.ikea.com/apim/openai
     description: Azure OpenAI Service API PROD
 info:
-  title: Test APIM Azure OpenAI Service API
+  title: Test APIM Azure OpenAI Service API Plugins
   description: Azure OpenAI APIs for completions and search
   version: 1.0.0
   contact:
