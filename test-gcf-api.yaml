@@ -4,7 +4,7 @@ info:
   description: APIM TEST API for testing gcf
   version: 1.0.0
 servers:
-  - url: https://api.ingka.cte.ikeadt.com/apim/apim-path-prefix-plugin-test
+  - url: https://api.ingka.cte.ikeadt.com/apim/apim-path-prefix-plugin-tests
     description: APIM Test GCF endpoint sales order attachment bug
 paths:
   /v1/test:
