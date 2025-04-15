@@ -23,8 +23,6 @@ paths:
                     example: Hello, OpenShift XX !!
 components:
   securitySchemes:
-    bearer_auth:
+    HTTPBearer:
       type: http
       scheme: bearer
-      bearerFormat: JWT
-      description: Bearer token/access token from Ingka Enterprise IAM
