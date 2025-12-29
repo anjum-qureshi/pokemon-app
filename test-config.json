@@ -9,14 +9,15 @@
   "gatewayPlugins": {
     "gcpToken": {
       "serviceInvokerSA": "apim-global-stage-cloudrun-inv@ingka-apim-global-stage.iam.gserviceaccount.com",
-      "serviceAudience": "https://apim-chat-bot-1093212293405.europe-west4.run.app"
+      "serviceAudience": "https://apim-mock-api-yvykwl7d3q-ez.a.run.app"
     },
-    "gcpBackendJwt": false
+    "gcpBackendJwt": false,
+    "additionalPluginsUrl": "https://raw.githubusercontent.com/anjum-qureshi/pokemon-app/refs/heads/main/ai_proxy_plugin.yaml"
   },
   "gatewayProperties": [
     {
       "timeout": 30,
-      "backendEndpoint": "https://apim-chat-bot-1093212293405.europe-west4.run.app",
+      "backendEndpoint": "https://apim-mock-api-yvykwl7d3q-ez.a.run.app",
       "internetFacingApi": true,
       "location": "gcp"
     }
