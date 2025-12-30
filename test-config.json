@@ -12,7 +12,6 @@
       "serviceAudience": "https://apim-mock-api-yvykwl7d3q-ez.a.run.app"
     },
     "gcpBackendJwt": false,
-    "additionalPluginsUrl": "https://raw.githubusercontent.com/anjum-qureshi/pokemon-app/refs/heads/main/ai_proxy_plugin.yaml"
   },
   "gatewayProperties": [
     {
