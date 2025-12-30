@@ -1,0 +1,24 @@
+{
+  "apiProperties": {
+    "stripPath": false,
+    "apiSecurity": {
+      "securityType": "bearer",
+      "enableOidcMultipleIssuer": false
+    }
+  },
+  "gatewayPlugins": {
+    "gcpToken": {
+      "serviceInvokerSA": "apim-global-stage-cloudrun-inv@ingka-apim-global-stage.iam.gserviceaccount.com",
+      "serviceAudience": "https://apim-mock-api-yvykwl7d3q-ez.a.run.app"
+    },
+    "gcpBackendJwt": false
+  },
+  "gatewayProperties": [
+    {
+      "timeout": 30,
+      "backendEndpoint": "https://apim-mock-api-yvykwl7d3q-ez.a.run.app",
+      "internetFacingApi": true,
+      "location": "gcp"
+    }
+  ]
+}
