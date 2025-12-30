@@ -11,7 +11,7 @@
       "serviceInvokerSA": "apim-global-stage-cloudrun-inv@ingka-apim-global-stage.iam.gserviceaccount.com",
       "serviceAudience": "https://apim-mock-api-yvykwl7d3q-ez.a.run.app"
     },
-    "gcpBackendJwt": false,
+    "gcpBackendJwt": false
   },
   "gatewayProperties": [
     {
